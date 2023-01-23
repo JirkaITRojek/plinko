@@ -69,7 +69,8 @@ addEventListener("keypress", function(e){
       s = 0;
       d = 0;
     }
-  });
+  })
+
 function newParticle() {
   if(s ==1){
     var p = new Particle(screenWidht / 2, 0, 10);
