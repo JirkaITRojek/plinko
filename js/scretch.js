@@ -13,7 +13,10 @@ var screenWidht = screen.width;
 var screenHeight = screen.height / 9 * 8;
 var cols = 20;
 var rows = 8;
-
+var speed = prompt('Zadej rychlost od 10 do 1')
+let a =0;
+let s =0;
+let d =0;
 
 
 
@@ -39,10 +42,10 @@ function setup() {
     }
   }
 
-  var b = new Boundary(screenWidht/2, screenHeight - 70 , 400, 40);
+  var b = new Boundary(width / 2, height + 50, width, 100);
   bounds.push(b);
 
-  /*for (var i = 0; i < cols + 2; i++) {
+  for (var i = 0; i < cols + 2; i++) {
     var x = i * spacing;
     var h = 100;
     var w = 10;
@@ -50,35 +53,24 @@ function setup() {
     var b = new Boundary(x, y, w, h);
     bounds.push(b);
 
-  }*/
-  
- /*var p = new Paddle(width / 2, height + 50, width, 100);
- for (var i = 0; i < cols + 2; i++) {
-  var x = i * spacing;
-  var h = 100;
-  var w = 10;
-  var y = height - h / 2;
-  var p = new Paddle(x, y, w, h);
-  paddle.push(p);
-
-}*/
+  }
 
 
 }
 //Zde si zmen spawn body
 function newParticle() {
-  var p = new Particle(screenWidht / 2, 0, 10);
+  if(s ==1){var p = new Particle(screenWidht / 2, 0, 10);
+  particles.push(p);}
+  if(a == 1){var p = new Particle(screenWidht / 4, 0, 10);
+  particles.push(p);}
+  if(d == 1){var p = new Particle((screenWidht / 4) * 3, 0, 10);
   particles.push(p);
-  /*var p = new Particle(screenWidht / 4, 0, 10);
-  particles.push(p);*/
-  /*var p = new Particle((screenWidht / 4) * 3, 0, 10);
-  particles.push(p);*/
-}
+  }
 
 function draw() {
   background(0, 0, 0);
   //Zde si zmen rychlost padani
-  if (frameCount % 20 == 0) {
+  if (frameCount % (speed * 10) == 0) {
     newParticle();
   }
   Engine.update(engine, 1000 / 30);
