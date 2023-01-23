@@ -59,7 +59,7 @@ addEventListener("keypress", function(e){
     if(e.code == 'KeyS')s = 1;
     if(e.code == 'KeyD')d = 1;
     if(e.code == 'KeyW')a = 0, s =0, d =0;
-  })
+  };)
 
 //Zde si zmen spawn body
 function newParticle() {
