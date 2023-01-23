@@ -19,8 +19,6 @@ let s =0;
 let d =0;
 
 
-
-
 function setup() {
   createCanvas(screenWidht, screenHeight);
   colorMode(HSB);
@@ -54,9 +52,16 @@ function setup() {
     bounds.push(b);
 
   }
+  
+ }
+addEventListener("keypress", function(e){
+    if(e.code == 'KeyA')a = 1
+    if(e.code == 'KeyS')s = 1
+    if(e.code == 'KeyD')d = 1
+    if(e.code == 'KeyW')a = 0, s =0, d =0  
+  
+})
 
-
-}
 //Zde si zmen spawn body
 function newParticle() {
   if(s ==1){var p = new Particle(screenWidht / 2, 0, 10);
@@ -66,6 +71,8 @@ function newParticle() {
   if(d == 1){var p = new Particle((screenWidht / 4) * 3, 0, 10);
   particles.push(p);
   }
+
+}
 
 function draw() {
   background(0, 0, 0);
