@@ -73,11 +73,16 @@ addEventListener("keypress", function(e){
 
 //Zde si zmen spawn body
 function newParticle() {
-  if(s ==1){var p = new Particle(screenWidht / 2, 0, 10);
-  particles.push(p);}
-  if(a == 1){var p = new Particle(screenWidht / 4, 0, 10);
-  particles.push(p);}
-  if(d == 1){var p = new Particle((screenWidht / 4) * 3, 0, 10);
+  if(s ==1){
+    var p = new Particle(screenWidht / 2, 0, 10);
+  particles.push(p);
+  }
+  if(a == 1){
+    var p = new Particle(screenWidht / 4, 0, 10);
+  particles.push(p);
+  }
+  if(d == 1){
+    var p = new Particle((screenWidht / 4) * 3, 0, 10);
   particles.push(p);
   }
 
