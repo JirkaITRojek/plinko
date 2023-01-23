@@ -70,8 +70,6 @@ addEventListener("keypress", function(e){
       d = 0;
     }
   });
-
-//Zde si zmen spawn body
 function newParticle() {
   if(s ==1){
     var p = new Particle(screenWidht / 2, 0, 10);
