@@ -1,12 +1,17 @@
 function Particle(x, y, r) {
- 
     this.hue = random(360);
+ //Nastavuje nahodnou barvu
     var options = {
       restitution: 0.5,
+     //Jak moc se kulicka odrazi
       friction: 0,
+     //Jak moc se zpomaluje
       density: 1
+     //Hustota kulicky
     }
+    //Nastaveni promene options
     x += random(-1, 1);
+    //Nastavuje x hodnotu bud 1 nebo -1 to zaridi nahodne odrazeni kulicky
     this.body = Bodies.circle(x, y, r, options);
     this.body.label = "particle";
     this.r = r;
